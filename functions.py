@@ -7,11 +7,13 @@ def find_clients(tab, text): # None means that its not in database
         if i.get_name() == text:
             return i
     return None
+
 def find_books(tab, text, text2):
     for i in tab:
         if i.get_name() == text and i.get_year() == text2:
             return i
     return None
+
 def save_clients_to_file(file_path, objects_list):
     try:
         with open(file_path, 'w', newline='') as file:
@@ -61,6 +63,7 @@ def read_from_clients(file_path, books):
     except Exception as e:
         print(f"Error while reading data from {file_path}: {e}")
         return []
+    
 def to_int(value):
     result=None
     try:
@@ -68,6 +71,7 @@ def to_int(value):
     except ValueError:
         print("Invalid input. Please enter a valid integer.")
     return result
+
 def print_lists(file_path):
     try:
         with open(file_path, 'r') as file:

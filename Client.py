@@ -1,6 +1,6 @@
 from Book import Book
 class Client:
-    clients = []
+    clients = [] # list of all Client objects
     def __init__(self,a):
         self.name = a
         Client.clients.append(self)
@@ -11,8 +11,6 @@ class Client:
         return self.rented_books
     def rent_book(self,book):
         self.rented_books.append(book)
-    def __del__(self):
-        pass
     def add_rented_book(self,book):
         self.rented_books.append(book)
     def return_rented_book(self,book):

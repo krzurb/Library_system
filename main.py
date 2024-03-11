@@ -29,8 +29,7 @@ def main():
         # Update and save to file
         save_clients_to_file(clients_file_path, Client.clients)
         save_books_to_file(books_file_path, Book.books)
-        time.sleep(2)
-        os.system('cls' if os.name == 'nt' else 'clear')
+        time.sleep(1)
 
 def display_menu():
     root = Tk()
@@ -55,16 +54,15 @@ def display_menu():
     root.mainloop()
 
     return int(choice_var.get())
-
 def handle_menu_option(choice):
-    if choice == 1:
+    if choice == 1: #add a client
         client_name = input("Enter client name: ")
         if find_clients(Client.clients, client_name) is None:
             Client(client_name)
             print("Client has been added successfully!")
         else:
             print("Client already in the database!")
-    elif choice == 2:
+    elif choice == 2: #remove a client
         client_name = input("Enter client name to be removed: ")
         find = find_clients(Client.clients, client_name)
         if find is not None:
@@ -81,7 +79,7 @@ def handle_menu_option(choice):
                 print("Client needs to return all books to be removed!")
         else:
             print("Client doesn't exist!")
-    elif choice == 3:
+    elif choice == 3: # add a book
         book_name = input("Enter book name to be added: ")
         book_year = to_int(input("Enter year of publishing: "))
         if book_year is not None:
@@ -96,7 +94,7 @@ def handle_menu_option(choice):
                 print("Book already in the database!")
         else:
             pass
-    elif choice == 4:
+    elif choice == 4: # remove a book
         book_name = input("Enter book name to be removed: ")
         book_year = to_int(input("Enter year of publishing: "))
         find = find_books(Book.books, book_name, book_year)
@@ -114,7 +112,7 @@ def handle_menu_option(choice):
                 print("Not all copies have been returned!")
         else:
             print("Book doesn't exist!")
-    elif choice == 5:
+    elif choice == 5: # rent a book
         client_name = input("Enter client name: ")
         client = find_clients(Client.clients, client_name)
         if client is not None:
@@ -133,7 +131,7 @@ def handle_menu_option(choice):
                 print("Book doesn't exist!")
         else:
             print("Client doesn't exist!")
-    elif choice == 6:
+    elif choice == 6: # return a book
         client_name = input("Enter client name: ")
         client = find_clients(Client.clients, client_name)
         if client is not None:
@@ -152,7 +150,7 @@ def handle_menu_option(choice):
                 print("Book doesn't exist!")
         else:
             print("Client doesn't exist!")
-    elif choice == 7:
+    elif choice == 7: # return all books
         client_name = input("Enter client name: ")
         client = find_clients(Client.clients, client_name)
         if client is not None:
@@ -169,14 +167,12 @@ def handle_menu_option(choice):
                     print("Client has not rented any books!")
         else:
             print("Client doesn't exist!")
-    elif choice == 8:
+    elif choice == 8: # print list of clients
         print("List of clients:\n")
         print_lists(clients_file_path)
-        time.sleep(3)
-    elif choice == 9:
+    elif choice == 9: # print list of books
         print("List of books:\n")
         print_lists(books_file_path)
-        time.sleep(3)
 
 if __name__ == '__main__':
     main()

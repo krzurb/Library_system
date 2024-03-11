@@ -1,13 +1,11 @@
 class Book:
-    books = []
+    books = [] # list of all Book objects
     def __init__(self,a,b,c,d):
         self.name = a
         self.year = b
         self.numbers = c
         self.max_numbers=d
         Book.books.append(self)
-    def __del__(self):
-        pass
     def get_name(self):
         return self.name
     def get_year(self):
