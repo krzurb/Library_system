@@ -27,7 +27,7 @@ Class Client has also class attribute Clients which is a list of all objects.
 
 Each time the program is run, data from booka_data.csv and clients_data is read. For each iteration of while loop, files are updated.
 
-After running main.py, window appears. There are 10 options (buttons) that user can choose from:
+After running main.py, a window appears. There are 10 options (buttons) that user can choose from:
 - Add a Client: adds a new client to databes. By using terminal, user specify user name. User name is treated as primary key, so only one client can have given name.
 - Remove a Client: removes client from database if it exists. User cannot remove client if it has rented books.
 - Add a Book: adds a new book to databes. By using terminal, user specify book name, year of publication, number of copies. Two books cannot have the same name and year of puiblication.
