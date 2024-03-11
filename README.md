@@ -16,6 +16,7 @@ Objects of class Book have 4 attributes:
 - current available number of copies,
 - overall number of copies.
 Class Book has also class attribute Books which is a list of all objects.
+
 Objects of class Client have 2 attributes:
 - client name,
 - rented books list: list of Book class obcjects that client has rented.
