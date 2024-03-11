@@ -21,7 +21,7 @@ Class Book has also class attribute Books which is a list of all objects.
 Objects of class Client have 2 attributes:
 - client name,
 - rented books list: list of Book class obcjects that client has rented.
-- 
+
 Class Client has also class attribute Clients which is a list of all objects.
 
 Each time the program is run, data from booka_data.csv and clients_data is read. For each iteration of while loop, files are updated.
