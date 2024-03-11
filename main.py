@@ -1,13 +1,13 @@
 from tkinter import Tk, Label, Button, StringVar
 import time
 import os
-from Books import Book
-from Clients import Client
+from Book import Book
+from Client import Client
 from functions import find_clients, find_books, save_clients_to_file, save_books_to_file
 from functions import read_from_books, read_from_clients, to_int, print_lists
 
-clients_file_path =  "clients.csv"
-books_file_path = "books.csv"
+clients_file_path =  "clients_data.csv"
+books_file_path = "books_data.csv"
 read_from_books(books_file_path)
 read_from_clients(clients_file_path, Book.books)
 
@@ -46,7 +46,7 @@ def display_menu():
 
     options = [
         "Add a Client", "Remove a Client", "Add a Book", "Remove a Book",
-        "Rent a Book", "Return a Book","Return all books", "List of Clients", "List of Books", "Exit"
+        "Rent a Book", "Return a Book","Return all Books", "List of Clients", "List of Books", "Exit"
     ]
 
     for index, option in enumerate(options, start=1):

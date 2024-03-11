@@ -1,7 +1,7 @@
 import numpy as np
 import csv
-from Books import Book
-from Clients import Client
+from Book import Book
+from Client import Client
 def find_clients(tab, text): # None means that its not in database
     for i in tab:
         if i.get_name() == text:
@@ -26,7 +26,7 @@ def save_books_to_file(file_path, objects_list):
     try:
         with open(file_path, 'w', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow(["Book Name", "Year", "Current Available", "Overall number of copies"])
+            writer.writerow(["Book Name", "Year", "Current Available number of copies", "Overall number of copies"])
             for obj in objects_list:
                 writer.writerow([obj.get_name(), obj.get_year(), obj.get_numbers(), obj.get_max_numbers()])
     except Exception as e:
