@@ -1,3 +1,5 @@
+ENG
+
 Simple Library System
 Author: Krzysztof Urbanowski
 
@@ -38,3 +40,48 @@ After running `main.py`, a window appears. There are ten options (buttons) that 
 - List of Clients: prints the attributes of the `Client` class for all `Client` objects.
 - List of Books: prints the attributes of the `Book` class for all `Book` objects.
 - Exit: ends the program.
+
+
+PL
+
+
+Prosty system biblioteczny
+Autor: Krzysztof Urbanowski
+
+Program składa się z czterech plików w języku Python:
+- `main.py`: skrypt wykonywalny
+- `functions.py`: definicje funkcji używanych w `main.py`
+- `Book.py`: klasa `Book`
+- `Client.py`: klasa `Client`
+
+Dodatkowo, istnieją dwa pliki CSV do przechowywania danych:
+- `books_data.csv`
+- `clients_data.csv`
+
+Obiekty klasy `Book` posiadają cztery atrybuty:
+- Nazwa książki
+- Rok wydania
+- Aktualna dostępna liczba kopii
+- Ogólna liczba kopii
+
+Klasa `Book` posiada także atrybut klasy `Books`, który jest listą wszystkich obiektów.
+
+Obiekty klasy `Client` posiadają dwa atrybuty:
+- Nazwa klienta
+- Lista wypożyczonych książek: lista obiektów klasy `Book`, które klient wypożyczył
+
+Klasa `Client` posiada także atrybut klasy `Clients`, który jest listą wszystkich obiektów.
+
+Za każdym razem, gdy program jest uruchamiany, dane z plików `books_data.csv` i `clients_data.csv` są odczytywane. W każdej iteracji pętli while pliki są aktualizowane.
+
+Po uruchomieniu `main.py` pojawia się okno wyboru. Dostępnych jest dziesięć opcji (przycisków), z których użytkownik może wybierać:
+- Add a Client: dodaje nowego klienta do bazy danych. Użytkownik określa nazwę użytkownika za pośrednictwem terminala. Nazwa użytkownika traktowana jest jako klucz główny, więc tylko jeden klient może mieć daną nazwę.
+- Remove a Client: usuwa klienta z bazy danych, jeśli istnieje. Użytkownik nie może usunąć klienta, jeśli ten ma wypożyczone książki.
+- Add a Book: dodaje nową książkę do bazy danych. Użytkownik określa nazwę książki, rok wydania i liczbę kopii za pośrednictwem terminala. Dwie książki nie mogą mieć takiej samej nazwy i roku wydania.
+- Remove a Book: usuwa książkę z bazy danych, jeśli istnieje. Książka nie może zostać usunięta, jeśli wszystkie kopie nie zostały zwrócone.
+- Rent a Book: wypożycza daną książkę dla danego klienta. Użytkownik określa nazwę użytkownika, nazwę książki i rok wydania za pośrednictwem terminala. Klient może wypożyczyć tylko jedną kopię każdej książki. Ta opcja zmniejsza aktualną dostępną liczbę kopii danej książki. Użytkownik nie może wypożyczyć książki, jeśli jej aktualna dostępna liczba kopii wynosi 0.
+- Return a Book: zwraca daną książkę, którą dany klient wypożyczył. Użytkownik określa nazwę klienta, nazwę książki i rok wydania za pośrednictwem terminala. Ta opcja zwiększa aktualną dostępną liczbę kopii danej książki.
+- Return all Books: zwraca wszystkie książki od danego klienta. Użytkownik określa nazwę użytkownika za pośrednictwem terminala. Ta opcja zwiększa aktualną dostępną liczbę kopii dla wszystkich książek, które klient wypożyczył.
+- List of Clients: drukuje atrybuty klasy `Client` dla wszystkich obiektów klasy `Client`.
+- List of Books: drukuje atrybuty klasy `Book` dla wszystkich obiektów klasy `Book`.
+- Exit: kończy program.
