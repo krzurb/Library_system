@@ -34,7 +34,7 @@ After running main.py, a window appears. There are 10 options (buttons) that use
 - Remove a Book: removes book from databes if it exists. Book cannot be removed if all copies have not been returned.
 - Rent a Book: rent a given book for given client. By using terminal, user specify user name, book name, year of publication. One client can rent one copy of each book. This option decrement current available number of copies of given book. User cannot rent a book if its current available number of copies is equal to 0.
 - Return a Book: returns given book that given client has rented. By using terminal, user specify client name, book name and year of publication. This option increment currrent available number of copies of given book.
--  Return all Books: returs all books from given client. By using terminal, user specify user name. This option increments currrent available number of copies for all rented books.
+-  Return all Books: returs all books from given client. By using terminal, user specify user name. This option increments currrent available number of copies for all books that client has rented.
 - List of Clients: prints class Client attributes for all Client objects.
 - List of Books: prints class Book attributes for all Book objects.
 - Exit: ends the program.
